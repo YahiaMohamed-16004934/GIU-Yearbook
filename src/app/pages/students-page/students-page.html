@@ -84,12 +84,10 @@
   <!-- STEP 5: THE GRID. One <app-student-card> per student.
        [student]="s" passes the data into the card's input(). -->
   <div class="grid" aria-label="Student directory">
-    @for (s of visibleStudents(); track s.id) {
-      <!-- STUDENT CARD GOES HERE -->
-
-      <h2>{{ s.name }}</h2>
-    }
-  </div>
+  @for (s of visibleStudents(); track s.id) {
+    <app-student-card [student]="s" />
+  }
+</div>
 }
 
 <!-- STEP 6: DIRECTORY END (completion message + Back to top) -->
